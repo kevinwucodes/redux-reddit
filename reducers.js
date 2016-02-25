@@ -5,6 +5,7 @@ import {
 } from './actions'
 
 function selectedSubreddit(state = 'reactjs', action) {
+  console.log('reducer called selectedSubreddit')
   switch (action.type) {
     case SELECT_SUBREDDIT:
       return action.subreddit
@@ -41,6 +42,7 @@ function posts(state = {
 }
 
 function postsBySubreddit(state = { }, action) {
+  console.log('reducer called postsBySubreddit')
   switch (action.type) {
     case INVALIDATE_SUBREDDIT:
     case RECEIVE_POSTS:

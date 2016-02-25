@@ -12,11 +12,13 @@ class AsyncApp extends Component {
   }
 
   componentDidMount() {
+    console.log('did mount?')
     const { dispatch, selectedSubreddit } = this.props
     dispatch(fetchPostsIfNeeded(selectedSubreddit))
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('will receieve props ', nextProps)
     if (nextProps.selectedSubreddit !== this.props.selectedSubreddit) {
       const { dispatch, selectedSubreddit } = nextProps
       dispatch(fetchPostsIfNeeded(selectedSubreddit))
